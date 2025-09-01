@@ -1,0 +1,28 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        for(int i=0;i<nums.length-1;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if (nums[i]+nums[j]== target)
+                return new int[]{i,j};
+                
+            }   
+        }
+        return new int[] {};
+    }
+    public static void main (String args[]){
+        Solution solution =new Solution();
+        Scanner sc= new Scanner (System.in);
+        System.out.println("enter the size od array");
+        int size=sc.nextInt();
+        int[] nums= new int[size];
+        System.out.println("enter the nums");
+        for(int i=0;i<size-1;i++){
+            nums[i]=sc.nextInt();
+        }
+        System.out.println("Enter the target");
+        int target = sc.nextInt();
+        int result[]=solution.twoSum(nums,target);
+        System.out.println(result[0]+", "+result[1]);
+
+    }
+}
